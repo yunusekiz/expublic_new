@@ -7,10 +7,10 @@
     <meta name="description" content="Expublic, public experience.">
     <meta name="author" content="Expublic">
     <!-- Styles -->
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-    <link rel='stylesheet' id='prettyphoto-css'  href="css/prettyPhoto.css" type='text/css' media='all'>
-    <link href="css/fontello.css" type="text/css" rel="stylesheet">
+    <link href="{base}css/bootstrap.css" rel="stylesheet">
+    <link href="{base}css/style.css" rel="stylesheet">
+    <link rel='stylesheet' id='prettyphoto-css'  href="{base}css/prettyPhoto.css" type='text/css' media='all'>
+    <link href="{base}css/fontello.css" type="text/css" rel="stylesheet">
     <!--[if lt IE 7]>
             <link href="css/fontello-ie7.css" type="text/css" rel="stylesheet">  
         <![endif]-->
@@ -25,19 +25,19 @@
         padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
     }
     </style>
-    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="{base}css/bootstrap-responsive.css" rel="stylesheet">
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
           <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
     <!-- Favicon -->
-    <link rel="shortcut icon" href="img/favicon.ico">
+    <link rel="shortcut icon" href="{base}img/favicon.ico">
     <!-- JQuery -->
-    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="{base}js/jquery.js"></script>
     <!-- Load ScrollTo -->
-    <script type="text/javascript" src="js/jquery.scrollTo-1.4.2-min.js"></script>
+    <script type="text/javascript" src="{base}js/jquery.scrollTo-1.4.2-min.js"></script>
     <!-- Load LocalScroll -->
-    <script type="text/javascript" src="js/jquery.localscroll-1.2.7-min.js"></script>
+    <script type="text/javascript" src="{base}js/jquery.localscroll-1.2.7-min.js"></script>
     <!-- prettyPhoto Initialization -->
     <script type="text/javascript" charset="utf-8">
           $(document).ready(function(){
@@ -76,16 +76,18 @@
     <!-- ******************** HeaderWrap ********************-->
     <div id="headerwrap">
       <header class="clearfix">
-        <h1><span></span> We make web a beautiful place.</h1>
+        <h1><span></span> {headline_iteration}{title}{/headline_iteration}.</h1>
         <div class="container">
           <div class="row">
             <div class="span12">
               <ul class="icon">
+                {social_iteration}
                 <!-- <li><a href="#" target="_blank"><i class="icon-pinterest-circled"></i></a></li> -->
-                <li><a href="#" target="_blank"><i class="icon-facebook-circled"></i></a></li>
-                <li><a href="#" target="_blank"><i class="icon-twitter-circled"></i></a></li>
-                <li><a href="#" target="_blank"><i class="icon-gplus-circled"></i></a></li>
-                <li><a href="#" target="_blank"><i class="icon-skype-circled"></i></a></li>
+                <li><a href="{facebook}" target="_blank"><i class="icon-facebook-circled"></i></a></li>
+                <li><a href="{twitter}" target="_blank"><i class="icon-twitter-circled"></i></a></li>
+                <li><a href="{g_plus}" target="_blank"><i class="icon-gplus-circled"></i></a></li>
+                <li><a href="{skype}" target="_blank"><i class="icon-skype-circled"></i></a></li>
+                {/social_iteration}
               </ul>
             </div>
           </div>
@@ -279,22 +281,22 @@
       <!-- ./container -->
     </div>
     <!-- Loading the javaScript at the end of the page -->
-    <script type="text/javascript" src="js/bootstrap.js"></script>
-    <script type="text/javascript" src="js/jquery.prettyPhoto.js"></script>
-    <script type="text/javascript" src="js/site.js"></script>
+    <script type="text/javascript" src="{base}js/bootstrap.js"></script>
+    <script type="text/javascript" src="{base}js/jquery.prettyPhoto.js"></script>
+    <script type="text/javascript" src="{base}js/site.js"></script>
     
     <!--ANALYTICS CODE-->
-	<script type="text/javascript">
-	  var _gaq = _gaq || [];
-	  _gaq.push(['_setAccount', 'UA-29231762-1']);
-	  _gaq.push(['_setDomainName', 'dzyngiri.com']);
-	  _gaq.push(['_trackPageview']);
-	
-	  (function() {
-		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-	  })();
-	</script>
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-xxxxxxx-1']);
+      _gaq.push(['_setDomainName', 'xxxxxxxxx.com']);
+      _gaq.push(['_trackPageview']);
+    
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
     </body>
     </html>

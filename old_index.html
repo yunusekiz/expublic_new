@@ -1,11 +1,11 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!DOCTYPE HTML>
+    <html lang="en">
+    <head>
+    <meta charset="utf-8">
     <title>Expublic</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Expublic, public experience.">
-    <meta name="author" content="Expublic">
+    <meta name="description" content="">
+    <meta name="author" content="">
     <!-- Styles -->
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
@@ -18,8 +18,6 @@
     <link href='http://fonts.googleapis.com/css?family=Quattrocento:400,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Patua+One' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-    <!-- Bootstrap CDN for Glyphicons -->
-    <!-- <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet"> -->
     <style>
     body {
         padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
@@ -53,15 +51,15 @@
           <div class="container">
             <!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. -->
             <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a>
-            <h1 class="brand"><!-- <a href="#top">Expublic!</a> --> <a href="#top"><img src="img/logo.png"></a>  </h1>
+            <h1 class="brand"><!-- <a href="#top">Expublic!</a> --> <img src="img/logo.png"> </h1>
             <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
             <nav class="pull-right nav-collapse collapse">
               <ul id="menu-main" class="nav">
                <!--  <li><a title="portfolio" href="#portfolio">Portfolio</a></li> -->
-                <li><a title="services" href="#services">Hizmetlerimiz</a></li>
+                <li><a title="services" href="#services">Services</a></li>
                 <!-- <li><a title="news" href="#news">News</a></li> -->
-                <li><a title="team" href="#team">Ekibimiz</a></li>
-                <li><a title="contact" href="#contact">İletişim</a></li>
+                <li><a title="team" href="#team">Team</a></li>
+                <li><a title="contact" href="#contact">Contact</a></li>
               </ul>
             </nav>
           </div>
@@ -78,10 +76,17 @@
       <header class="clearfix">
         <h1><span></span> We make web a beautiful place.</h1>
         <div class="container">
+<!--           <div class="row">
+            <div class="span12">
+              <h2>Signup for our Newsletter to be updated</h2>
+              <input type="text" name="your-email" placeholder="you@yourmail.com" class="cform-text" size="40" title="your email">
+              <input type="submit" value="Notify me" class="cform-submit">
+            </div>
+          </div> -->
           <div class="row">
             <div class="span12">
               <ul class="icon">
-                <!-- <li><a href="#" target="_blank"><i class="icon-pinterest-circled"></i></a></li> -->
+                <li><a href="#" target="_blank"><i class="icon-pinterest-circled"></i></a></li>
                 <li><a href="#" target="_blank"><i class="icon-facebook-circled"></i></a></li>
                 <li><a href="#" target="_blank"><i class="icon-twitter-circled"></i></a></li>
                 <li><a href="#" target="_blank"><i class="icon-gplus-circled"></i></a></li>
@@ -112,12 +117,105 @@
       </section>
     </div>
     <hr>
+    <!--******************** Portfolio Section ********************-->
+<!--     <section id="portfolio" class="single-page scrollblock">
+      <div class="container">
+        <div class="align"><i class="icon-desktop-circled"></i></div>
+        <h1 id="folio-headline">Portfolio...</h1>
+        <div class="row">
+          <div class="span4">
+            <div class="mask2"> <a href="img/portfolio-01.jpg" rel="prettyPhoto"><img src="img/portfolio-01.jpg" alt=""></a> </div>
+            <div class="inside">
+              <hgroup>
+                <h2>Ethan Marcotte Design</h2>
+              </hgroup>
+              <div class="entry-content">
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                <a class="more-link" href="#">view project</a> </div>
+            </div>
+             /inside
+          </div>
+          .span4 
+          <div class="span4">
+            <div class="mask2"> <a href="img/portfolio-02.jpg" rel="prettyPhoto"><img src="img/portfolio-02.jpg" alt=""></a> </div>
+            <div class="inside">
+              <hgroup>
+                <h2>A Book Apart</h2>
+              </hgroup>
+              <div class="entry-content">
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                <a class="more-link" href="#">view project</a> </div>
+            </div>
+            /.inside 
+          </div>
+          .span4 
+          <div class="span4">
+            <div class="mask2"> <a href="img/portfolio-03.jpg" rel="prettyPhoto"><img src="img/portfolio-03.jpg" alt=""></a> </div>
+            <div class="inside">
+              <hgroup>
+                <h2>Four Rules for Designers</h2>
+              </hgroup>
+              <div class="entry-content">
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                <a class="more-link" href="#">view project</a> </div>
+            </div>
+             /.inside 
+          </div>
+          .span4 
+        </div>
+        .row 
+        
+        <div class="row">
+          <div class="span4">
+            <div class="mask2"> <a href="img/portfolio-01.jpg" rel="prettyPhoto"><img src="img/portfolio-03.jpg" alt=""></a> </div>
+            <div class="inside">
+              <hgroup>
+                <h2>Ethan Marcotte Design</h2>
+              </hgroup>
+              <div class="entry-content">
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                <a class="more-link" href="#">view project</a> </div>
+            </div>
+            /.inside
+          </div>
+           /.span4 
+          <div class="span4">
+            <div class="mask2"> <a href="img/portfolio-02.jpg" rel="prettyPhoto"><img src="img/portfolio-01.jpg" alt=""></a> </div>
+            <div class="inside">
+              <hgroup>
+                <h2>A Book Apart</h2>
+              </hgroup>
+              <div class="entry-content">
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                <a class="more-link" href="#">view project</a> </div>
+            </div>
+            /.inside 
+          </div>
+         - /.span4 
+          <div class="span4">
+            <div class="mask2"> <a href="img/portfolio-03.jpg" rel="prettyPhoto"><img src="img/portfolio-02.jpg" alt=""></a> </div>
+            <div class="inside">
+              <hgroup>
+                <h2>Four Rules for Designers</h2>
+              </hgroup>
+              <div class="entry-content">
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                <a class="more-link" href="#">view project</a> </div>
+            </div>
+             /.inside 
+          </div>
+          /.span4 
+        </div>
+        /.row 
+      </div>
+     /.container
+    </section> -->
     <hr>
     <!--******************** Services Section ********************-->
     <section id="services" class="single-page scrollblock">
       <div class="container">
         <div class="align"><i class="icon-cog-circled"></i></div>
-        <h1>Hizmetlerimiz</h1>
+        <h1>Services</h1>
         <!-- Four columns -->
         <div class="row">
           <div class="span3">
@@ -171,12 +269,57 @@
       <!-- /.container -->
     </section>
     <hr>
+    <!--******************** News Section ********************-->
+<!--     <section id="news" class="single-page scrollblock">
+      <div class="container">
+        <div class="align"><i class="icon-pencil-circled"></i></div>
+        <h1>Our Blog</h1>
+         Three columns
+        <div class="row">
+          <article class="span4 post"> <img class="img-news" src="img/blog_img-01.jpg" alt="">
+            <div class="inside">
+              <p class="post-date"><i class="icon-calendar"></i> March 17, 2013</p>
+              <h2>A girl running on a road</h2>
+              <div class="entry-content">
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. &hellip;</p>
+                <a href="#" class="more-link">read more</a> </div>
+            </div>
+            .inside
+          </article>
+          /.span4 
+          <article class="span4 post"> <img class="img-news" src="img/blog_img-02.jpg" alt="">
+            <div class="inside">
+              <p class="post-date">February 28, 2013</p>
+              <h2>A bear sleeping on a tree</h2>
+              <div class="entry-content">
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. &hellip;</p>
+                <a href="#" class="more-link">read more</a> </div>
+            </div>
+            /.inside
+          </article>
+          /.span4
+          <article class="span4 post"> <img class="img-news" src="img/blog_img-03.jpg" alt="">
+            <div class="inside">
+              <p class="post-date">February 06, 2013</p>
+              <h2>A Panda playing with his baby</h2>
+              <div class="entry-content">
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. &hellip;</p>
+                <a href="#" class="more-link">read more</a> </div>
+            </div>
+            /.inside 
+          </article>
+           /.span4 
+        </div>
+         /.row 
+        <a href="#" class="btn btn-large">Go to our blog</a> </div>
+      /.container 
+    </section> -->
     <hr>
     <!--******************** Team Section ********************-->
     <section id="team" class="single-page scrollblock">
       <div class="container">
         <div class="align"><i class="icon-group-circled"></i></div>
-        <h1>Ekibimiz</h1>
+        <h1>Meet the team</h1>
         <!-- Five columns -->
         <div class="row">
           <div class="span2 offset1">
@@ -233,31 +376,34 @@
     <section id="contact" class="single-page scrollblock">
       <div class="container">
         <div class="align"><i class="icon-mail-2"></i></div>
-        <h1>İletişim!</h1>
+        <h1>Contact us now!</h1>
         <div class="row">
           <div class="span12">
             <div class="cform" id="theme-form">
               <form action="#" method="post" class="cform-form">
                 <div class="row">
-                  <div class="span12"> <span class="your-name">
-                    <input type="text" name="your-name" placeholder="İsim, Soyisim" class="cform-text" size="80" title="İsim, Soyisim" required>
+                  <div class="span6"> <span class="your-name">
+                    <input type="text" name="your-name" placeholder="Your Name" class="cform-text" size="40" title="your name">
+                    </span> </div>
+                  <div class="span6"> <span class="your-email">
+                    <input type="text" name="your-email" placeholder="Your Email" class="cform-text" size="40" title="your email">
                     </span> </div>
                 </div>
                 <div class="row">
-                  <div class="span6"> <span class="phone">
-                    <input type="text" name="your-phone" placeholder="Telefon" class="cform-text" size="40" title="Telefon" required>
+                  <div class="span6"> <span class="company">
+                    <input type="text" name="company" placeholder="Your Company" class="cform-text" size="40" title="company">
                     </span> </div>
-                  <div class="span6"> <span class="your-email">
-                    <input type="text" name="your-email" placeholder="E-posta" class="cform-text" size="40" title="E-posta" required>
+                  <div class="span6"> <span class="website">
+                    <input type="text" name="website" placeholder="Your Website" class="cform-text" size="40" title="website">
                     </span> </div>
                 </div>
                 <div class="row">
                   <div class="span12"> <span class="message">
-                    <textarea name="message" class="cform-textarea" cols="40" rows="10" title="Mesaj" placeholder="Mesaj" required></textarea>
+                    <textarea name="message" class="cform-textarea" cols="40" rows="10" title="drop us a line."></textarea>
                     </span> </div>
                 </div>
                 <div>
-                  <input type="submit" value="Gönder" class="cform-submit pull-left">
+                  <input type="submit" value="Send message" class="cform-submit pull-left">
                 </div>
                 <div class="cform-response-output"></div>
               </form>
@@ -273,7 +419,7 @@
     <div class="footer-wrapper">
       <div class="container">
         <footer>
-          <small>&copy; 2013 Expublic</small>
+          <small>&copy; 2013 Inbetwin Network. All rights reserved.</small>
         </footer>
       </div>
       <!-- ./container -->
