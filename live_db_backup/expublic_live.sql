@@ -19,8 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Veritabanı: `expublic`
 --
-CREATE DATABASE IF NOT EXISTS `expublic` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `expublic`;
+CREATE DATABASE IF NOT EXISTS `expublic_db` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `expublic_db`;
 
 -- --------------------------------------------------------
 
@@ -170,7 +170,7 @@ CREATE TABLE IF NOT EXISTS `team_view` (
 --
 DROP TABLE IF EXISTS `team_view`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `team_view` AS select `team_detail`.`team_id` AS `team_id`,`team_detail`.`team_title` AS `team_title`,`team_detail`.`team_detail` AS `team_detail`,`team_photo`.`team_photo_id` AS `team_photo_id`,`team_photo`.`team_big_photo` AS `team_big_photo`,`team_photo`.`team_thumb_photo` AS `team_thumb_photo` from (`team_detail` join `team_photo`) where (`team_detail`.`team_id` = `team_photo`.`team_id`);
+CREATE ALGORITHM=UNDEFINED DEFINER=`expublic`@`localhost` SQL SECURITY DEFINER VIEW `team_view` AS select `team_detail`.`team_id` AS `team_id`,`team_detail`.`team_title` AS `team_title`,`team_detail`.`team_detail` AS `team_detail`,`team_photo`.`team_photo_id` AS `team_photo_id`,`team_photo`.`team_big_photo` AS `team_big_photo`,`team_photo`.`team_thumb_photo` AS `team_thumb_photo` from (`team_detail` join `team_photo`) where (`team_detail`.`team_id` = `team_photo`.`team_id`);
 
 --
 -- Dökümü yapılmış tablolar için kısıtlamalar

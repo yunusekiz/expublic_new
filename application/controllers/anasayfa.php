@@ -17,6 +17,7 @@ class anasayfa extends CI_Controller {
 		$this->service();
 		$this->team();
 		$this->headline();
+		$this->team();
 		
 		$this->parser->parse('frontend_views/anasayfa_view',$this->parser_data);
 	}

@@ -47,8 +47,11 @@ class service extends CI_Controller {
 		$service_title  = $this->input->post('service_title');
 		$service_detail = $this->input->post('service_detail');
 
-		if ( ($service_icon!='')&&($service_title!='')&&($service_detail!='')) 
+		if (($service_title!='')&&($service_detail!='')) 
 		{
+			if ($service_icon =='')
+				$service_icon = 'icon-desktop';
+
 			$service_css = filterForeignChars($service_title);	
 			$insert_item_detail_to_db = $this->{$this->model_name}->insertNewItemDetail($service_icon,$service_title,
 																						$service_detail,$service_css);
@@ -100,7 +103,7 @@ class service extends CI_Controller {
 		
 		$this->parser->parse('backend_views/admin_header_view',$this->parser_data);
 		$this->parser->parse('backend_views/admin_main_view',$this->parser_data);
-		$this->parser->parse('backend_views/update_brand_detail_view',$this->parser_data);
+		$this->parser->parse('backend_views/update_service_detail_view',$this->parser_data);
 		$this->parser->parse('backend_views/admin_footer_view',$this->parser_data);			
 	}
 
@@ -108,13 +111,19 @@ class service extends CI_Controller {
 	{
 		$item_id = $this->input->post('id');
 
-		$brand_name = $this->input->post('brand_name');
+		$service_icon   = $this->input->post('service_icon');
+		$service_title  = $this->input->post('service_title');
+		$service_detail = $this->input->post('service_detail');
 
-		if ($brand_name!='') 
+		if (($service_title!='')&&($service_detail!='')) 
 		{
-			$item_css = filterForeignChars($brand_name);
+			if ($service_icon =='')
+				$service_icon = 'icon-desktop';
 
-			$update_item_detail = $this->{$this->model_name}->updateItemDetail($item_id ,$brand_name, $item_css);
+			$service_css = filterForeignChars($service_title);
+
+			$update_item_detail = $this->{$this->model_name}->updateItemDetail($item_id, $service_icon,$service_title,
+																			   $service_detail, $service_css);
 			if ($update_item_detail == TRUE) 
 			{
 				$message = 'Kayıt Güncelleme Başarılı..!';
@@ -134,6 +143,22 @@ class service extends CI_Controller {
 			$return_path = 'updateItemDetailForm/'.$item_id;
 			$this->jquery_notification_library->errorMessage($message, $return_path,1);			
 		}	
+	}
+
+	public function deleteItem($id)
+	{
+		if ($this->service_model->deleteRow($id) == TRUE) 
+		{
+				$message = 'Kayıt Silme Başarılı..!';
+				$return_path = '../allItems';
+				$this->jquery_notification_library->successMessage($message, $return_path,1);	
+		}
+		else
+		{
+			$message = 'HATA:: Kayıt Silinemedi...';
+			$return_path = 'allItems';
+			$this->jquery_notification_library->errorMessage($message, $return_path,1);			
+		}
 	}
 
 

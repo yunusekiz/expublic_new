@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class auto extends CI_Controller {
+class team extends CI_Controller {
 	
 	protected $parser_data;
 
@@ -24,11 +24,11 @@ class auto extends CI_Controller {
 		parent::__construct();
 		$this->session_killer_library->controlSession('admin_session');
 
-		$this->model_name = 'auto_model';
-		$this->item_big_photo_column_name = 'auto_big_photo';
-		$this->item_thumb_photo_column_name = 'auto_thumb_photo';
+		$this->model_name = 'team_model';
+		$this->item_big_photo_column_name = 'team_big_photo';
+		$this->item_thumb_photo_column_name = 'team_thumb_photo';
 
-		$this->change_item_photo_form_action = 'auto/changeItemPhoto';
+		$this->change_item_photo_form_action = 'team/changeItemPhoto';
 		
 		$this->parser_data['base'] = base_url();
 		$this->parser_data['backend_base'] = base_url().'backend/';
@@ -40,11 +40,11 @@ class auto extends CI_Controller {
 
 		$this->img_lib_bootstrap_data = array(
 											  'image_form_field' =>	'photo_field',
-											  'upload_path'		 =>	'assets/images/auto',
+											  'upload_path'		 =>	'assets/images/team',
 											  'image_name'		 =>	$this->img_name,
-											  'big_img_width'	 =>	800,
-											  'big_img_height'	 =>	550,
-											  'thumb_img_width'	 =>	218,
+											  'big_img_width'	 =>	150,
+											  'big_img_height'	 =>	149,
+											  'thumb_img_width'	 =>	150,
 											  'thumb_img_height' =>	149
 					 	 					);
 	}
@@ -54,15 +54,10 @@ class auto extends CI_Controller {
  	   yeni kayıt eklemek için gerekli olan HTML formları getirir. */
 	public function addItemForm() 
 	{
-		if ($this->{$this->model_name}->readParentRow() != NULL)
-			$this->parser_data['brands_iteration'] = $this->{$this->model_name}->readParentRow();
-		else
-			$this->parser_data['brands_iteration'] = array();
-
 		// admin panelinin ilgili view lerini yükler
 		$this->parser->parse('backend_views/admin_header_view',$this->parser_data);
 		$this->parser->parse('backend_views/admin_main_view',$this->parser_data);
-		$this->parser->parse('backend_views/add_auto_view',$this->parser_data);
+		$this->parser->parse('backend_views/add_team_view',$this->parser_data);
 		$this->parser->parse('backend_views/admin_footer_view',$this->parser_data);
 	}
 
@@ -70,19 +65,18 @@ class auto extends CI_Controller {
 	/* Yeni kayıt için eklemek için formdan gönderilen değerleri kontrol edip veritabanına kaydeder.*/
 	public function addItem()
 	{
-		$auto_title	 = $this->input->post('auto_title');
-		$auto_detail = $this->input->post('auto_detail');
-		$brand_id	 = $this->input->post('brand_id');
+		$team_title	 = $this->input->post('team_title');
+		$team_detail = $this->input->post('team_detail');
 
-		if (($auto_title!='')&&($auto_detail!='')&&($brand_id!='0')) 
+		if (($team_title!='')&&($team_detail!='')) 
 		{
-			$item_css = filterForeignChars($auto_title);
+			$item_css = filterForeignChars($team_title);
 
 			$this->load->library('image_upload_resize_library');
 				
 			$this->image_upload_resize_library->setBootstrapData($this->img_lib_bootstrap_data);
 		
-			$this->image_upload_resize_library->display_errors = FALSE;
+			$this->image_upload_resize_library->display_errors = true;
 
 			$image_up_and_resize = $this->image_upload_resize_library->imageUpAndResize();
 
@@ -90,9 +84,12 @@ class auto extends CI_Controller {
 			{
 				$big_img_data_for_db	= $this->image_upload_resize_library->getSizedBigImgNameForDB();
 				$thumb_img_data_for_db	= $this->image_upload_resize_library->getSizedThumbImgNameForDB();
-
-				$insert_item_detail_to_db = $this->{$this->model_name}->insertNewItemDetail($brand_id, $auto_title,
-																							$auto_detail, $item_css);
+				
+				/* var_dump($big_img_data_for_db);
+				   echo "<br>";
+				   var_dump($thumb_img_data_for_db); */
+				
+				$insert_item_detail_to_db = $this->{$this->model_name}->insertNewItemDetail($team_title,$team_detail);
 				if ($insert_item_detail_to_db==TRUE) // item detail ler db ye insert edilmişse, item photo bilgilerini db ye insert eder 
 				{
 					$insert_item_photo_to_db = $this->{$this->model_name}->insertNewItemPhoto($big_img_data_for_db, 
@@ -154,7 +151,7 @@ class auto extends CI_Controller {
 		// admin panelinin ilgili view lerini yükler
 		$this->parser->parse('backend_views/admin_header_view',$this->parser_data);
 		$this->parser->parse('backend_views/admin_main_view',$this->parser_data);
-		$this->parser->parse('backend_views/all_auto_view',$this->parser_data);
+		$this->parser->parse('backend_views/all_team_view',$this->parser_data);
 		$this->parser->parse('backend_views/admin_footer_view',$this->parser_data);		
 	}
 
@@ -165,7 +162,7 @@ class auto extends CI_Controller {
 		
 		$this->parser->parse('backend_views/admin_header_view',$this->parser_data);
 		$this->parser->parse('backend_views/admin_main_view',$this->parser_data);
-		$this->parser->parse('backend_views/update_auto_detail_view',$this->parser_data);
+		$this->parser->parse('backend_views/update_team_detail_view',$this->parser_data);
 		$this->parser->parse('backend_views/admin_footer_view',$this->parser_data);			
 	}
 
@@ -173,17 +170,17 @@ class auto extends CI_Controller {
 	public function updateItemDetail()
 	{
 		$item_id = $this->input->post('id');
+		
+		$team_title	 = $this->input->post('team_title');
+		$team_detail = $this->input->post('team_detail');
 
-		$auto_title	 = $this->input->post('auto_title');
-		$auto_detail = $this->input->post('auto_detail');
-		$brand_id	 = $this->input->post('brand_id');
-
-		if (($auto_title!='')&&($auto_detail!='')&&($brand_id!='0')) 
+		if (($team_title!='')&&($team_detail!='')) 
 		{
-			$item_css = filterForeignChars($auto_title);
+			$item_css = filterForeignChars($team_title);
 
-			$update_item_detail = $this->{$this->model_name}->updateItemDetail($item_id, $brand_id, $auto_title,
-																			   $auto_detail, $item_css);
+			$item_css = filterForeignChars($team_title);
+
+			$update_item_detail = $this->{$this->model_name}->updateItemDetail($item_id,$team_title,$team_detail);
 			if ($update_item_detail == TRUE) 
 			{
 				$message = 'Kayıt Güncelleme Başarılı..!';

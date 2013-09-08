@@ -15,6 +15,7 @@
 |
 */
 $config['base_url']	= 'http://localhost/expublic_new';
+/*$config['base_url']	= 'http://expublic.com';*/
 
 /*
 |--------------------------------------------------------------------------

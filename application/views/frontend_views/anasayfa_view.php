@@ -120,32 +120,41 @@
       <div class="container">
         <div class="align"><i class="icon-cog-circled"></i></div>
         <h1>Hizmetlerimiz</h1>
-        <!-- Four columns -->
+       
         <div class="row">
+
+          {service_iteration}
           <div class="span3">
+            <div class="align"> <i class="{service_icon} sev_icon"></i> </div>
+            <h2>{service_title}</h2>
+            <p>{service_detail}</p>
+          </div>
+          {/service_iteration}
+
+<!--      <div class="span3">
             <div class="align"> <i class="icon-desktop sev_icon"></i> </div>
             <h2>Web design</h2>
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
           </div>
-          <!-- /.span3 -->
+          
           <div class="span3">
             <div class="align"> <i class="icon-vector sev_icon"></i> </div>
             <h2>Print Design</h2>
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
           </div>
-          <!-- /.span3 -->
+          
           <div class="span3">
             <div class="align"> <i class="icon-basket sev_icon"></i> </div>
             <h2>Ecommerce</h2>
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
           </div>
-          <!-- /.span3 -->
+          
           <div class="span3">
             <div class="align"> <i class="icon-mobile-1 sev_icon"></i> </div>
             <h2>Marketing</h2>
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-          </div>
-          <!-- /.span3 -->
+          </div> -->
+          
         </div>
         <!-- /.row -->
       </div>
@@ -179,38 +188,16 @@
       <div class="container">
         <div class="align"><i class="icon-group-circled"></i></div>
         <h1>Ekibimiz</h1>
-        <!-- Five columns -->
+        
         <div class="row">
+          {team_iteration}
           <div class="span2 offset1">
-            <div class="teamalign"> <img class="team-thumb img-circle" src="img/portrait-1.jpg" alt=""> </div>
-            <h3>Andrew</h3>
-            <div class="job-position">web designer</div>
-          </div>
-          <!-- ./span2 -->
-          <div class="span2">
-            <div class="teamalign"> <img class="team-thumb img-circle" src="img/portrait-2.jpg" alt=""> </div>
-            <h3>Stephen</h3>
-            <div class="job-position">web developer</div>
-          </div>
-          <!-- ./span2 -->
-          <div class="span2">
-            <div class="teamalign"> <img class="team-thumb img-circle" src="img/portrait-3.jpg" alt=""> </div>
-            <h3>Maria</h3>
-            <div class="job-position">graphic designer</div>
-          </div>
-          <!-- ./span2 -->
-          <div class="span2">
-            <div class="teamalign"> <img class="team-thumb img-circle" src="img/portrait-4.jpg" alt=""> </div>
-            <h3>John</h3>
-            <div class="job-position">project manager</div>
-          </div>
-          <!-- ./span2 -->
-          <div class="span2">
-            <div class="teamalign"> <img class="team-thumb img-circle" src="img/portrait-2.jpg" alt=""> </div>
-            <h3>Ashton</h3>
-            <div class="job-position">real owner</div>
-          </div>
-          <!-- ./span2 -->
+            <div class="teamalign"> <img class="team-thumb img-circle" src="{base}{team_big_photo}" alt=""> </div>
+            <h3>{team_title}</h3>
+            <div class="job-position">{team_detail}</div>
+          </div>          
+          {/team_iteration}
+          
         </div>
         <!-- /.row -->
         <div class="row">

@@ -48,6 +48,14 @@
 $active_group = 'default';
 $active_record = TRUE;
 
+
+/* live config */
+/*$db['default']['username'] = 'expublic_admin';
+$db['default']['password'] = 'kavun89';
+$db['default']['database'] = 'expublic_db';
+*/
+
+
 $db['default']['hostname'] = 'localhost';
 $db['default']['username'] = 'root';
 $db['default']['password'] = '';

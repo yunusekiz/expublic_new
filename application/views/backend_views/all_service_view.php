@@ -19,8 +19,8 @@
 							<thead>
 								<tr>
 								{all_items_header_css}
-									<th></th>
-								    <th>Düzenle<font style="margin-left:-2px; margin-right:20px;"></font></th>
+									<th>Düzenle</th>
+								    <th><font style="margin-left:-2px; margin-right:20px;">Sil</font></th>
 								    <th></th>
 								    <th></th>
 								    <th></th>
@@ -34,12 +34,12 @@
 							<tbody>
 								 {all_items}
 								<tr>
-									<td></td>
-									
 									<td>
 										<a href="{backend_base}service/updateItemDetailForm/{service_id}" title="Düzenle"><img src="{base}assets/backend_assets/images/icons/pencil.png" alt="Düzenle" /></a>
 									</td>
-
+									<td>
+										<a href="{backend_base}service/deleteItem/{service_id}" title="Sil"><img src="{base}assets/backend_assets/images/icons/cross.png" alt="Sil" /></a>
+									</td>
 									<td></td>
 
 									<td class="cocukdiv_image"></td>

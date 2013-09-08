@@ -42,8 +42,8 @@
 					Ekibimiz
 					</a>
 					<ul>
-						<li><a href="{base}backend/auto/addItemForm" class="{add_ref_current}">Yeni Kayıt Ekle</a></li>
-						<li><a href="{base}backend/auto/allItems" class="{edit_ref_current}">Kayıtları Düzenle/Sil</a></li> <!-- Add class "current" to sub menu items also -->
+						<li><a href="{base}backend/team/addItemForm" class="{add_ref_current}">Yeni Kayıt Ekle</a></li>
+						<li><a href="{base}backend/team/allItems" class="{edit_ref_current}">Kayıtları Düzenle/Sil</a></li> <!-- Add class "current" to sub menu items also -->
 					</ul>
 				</li>																
 		

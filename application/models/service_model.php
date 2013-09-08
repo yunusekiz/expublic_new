@@ -47,7 +47,7 @@ class service_model extends CI_Model {
 		}
 	}
 
-	public function updateServiceDetail($service_id, $service_icon,$service_title, $service_detail, $service_css)
+	public function updateItemDetail($service_id, $service_icon,$service_title, $service_detail, $service_css)
 	{
 		$update_data = array(
 								'service_icon'		=> $service_icon,
