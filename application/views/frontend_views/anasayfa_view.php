@@ -85,8 +85,8 @@
                 <!-- <li><a href="#" target="_blank"><i class="icon-pinterest-circled"></i></a></li> -->
                 <li><a href="{facebook}" target="_blank"><i class="icon-facebook-circled"></i></a></li>
                 <li><a href="{twitter}" target="_blank"><i class="icon-twitter-circled"></i></a></li>
-                <li><a href="{g_plus}" target="_blank"><i class="icon-gplus-circled"></i></a></li>
-                <li><a href="{skype}" target="_blank"><i class="icon-skype-circled"></i></a></li>
+                <!-- <li><a href="{g_plus}" target="_blank"><i class="icon-gplus-circled"></i></a></li> -->
+                <li><a href="#{skype}" target="_blank" title="{skype}"><i class="icon-skype-circled"></i></a></li>
                 {/social_iteration}
               </ul>
             </div>
@@ -120,9 +120,8 @@
       <div class="container">
         <div class="align"><i class="icon-cog-circled"></i></div>
         <h1>Hizmetlerimiz</h1>
-       
+        
         <div class="row">
-
           {service_iteration}
           <div class="span3">
             <div class="align"> <i class="{service_icon} sev_icon"></i> </div>
@@ -130,8 +129,8 @@
             <p>{service_detail}</p>
           </div>
           {/service_iteration}
-
-<!--      <div class="span3">
+          
+<!--       <div class="span3">
             <div class="align"> <i class="icon-desktop sev_icon"></i> </div>
             <h2>Web design</h2>
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
@@ -204,10 +203,10 @@
           <div class="span10 offset1">
             <hr class="featurette-divider">
             <div class="featurette">
-              <h2 class="featurette-heading">Want to know more? <span class="muted">| a little about us</span></h2>
-              <p>Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular. Li lingues differe solmen in li grammatica, li pronunciation e li plu commun vocabules. Omnicos directe al desirabilite de un nov lingua franca: On refusa continuar payar custosi traductores.</p>
-              <p>At solmen va esser necessi far uniform grammatica, pronunciation e plu sommun paroles. Ma quande lingues coalesce, li grammatica del resultant lingue es plu simplic e regulari quam ti del coalescent lingues.</p>
-              <p>A un Angleso it va semblar un simplificat Angles, quam un skeptic Cambridge amico dit me que Occidental es.</p>
+              <h2 class="featurette-heading">Biraz da kendimizden bahsedelim. <span class="muted"></span></h2>
+              <p>Biz verdiğimiz hizmetler konusunda hem uzman hem de genç bir kadroya sahibiz. Türkiye’de birçok üniversitede gençlerden oluşan genç, dinamik, yaratıcı, çağa ayak uydurmuş bir takıma sahibiz. Yılların tecrübesiyle gençlerin enerjisinin buluştuğu tek şirketiz.  Hedefler doğrultusunda sonuç odaklı çalışan, verdiği hizmetlerde kaliteyi ön planda tutan, sektöre yeni bir soluk getirmeyi amaçlayan, verilen hizmetlerde gerçekçi ve mütevazi fiyatlar belirleyen bir ajansız.
+              </p>
+
             </div>
             <!-- /.featurette -->
             <hr class="featurette-divider">
@@ -224,24 +223,24 @@
         <div class="align"><i class="icon-mail-2"></i></div>
         <h1>İletişim!</h1>
         <div class="row">
-          <div class="span12">
+          <div class="span6">
             <div class="cform" id="theme-form">
               <form action="#" method="post" class="cform-form">
                 <div class="row">
-                  <div class="span12"> <span class="your-name">
+                  <div class="span6"> <span class="your-name">
                     <input type="text" name="your-name" placeholder="İsim, Soyisim" class="cform-text" size="80" title="İsim, Soyisim" required>
                     </span> </div>
                 </div>
                 <div class="row">
-                  <div class="span6"> <span class="phone">
+                  <div class="span3"> <span class="phone">
                     <input type="text" name="your-phone" placeholder="Telefon" class="cform-text" size="40" title="Telefon" required>
                     </span> </div>
-                  <div class="span6"> <span class="your-email">
+                  <div class="span3"> <span class="your-email">
                     <input type="text" name="your-email" placeholder="E-posta" class="cform-text" size="40" title="E-posta" required>
                     </span> </div>
                 </div>
                 <div class="row">
-                  <div class="span12"> <span class="message">
+                  <div class="span6"> <span class="message">
                     <textarea name="message" class="cform-textarea" cols="40" rows="10" title="Mesaj" placeholder="Mesaj" required></textarea>
                     </span> </div>
                 </div>
@@ -253,6 +252,25 @@
             </div>
           </div>
           <!-- ./span12 -->
+          <div class="span6">
+            <div class="cform" id="theme-form">
+                <div class="row">
+                  <div class="span6">
+                    {contact_iteration}
+                      <b>Adres :</b>   {address}<br/>
+                      <b>Telefon :</b>  {phone}<br/>
+                      <b>E-posta : </b> {email}<br/>
+                     <b> Faks   :  </b> {g_plus}<br/><br/>
+                     {/contact_iteration}
+
+                  </div>
+                   <div class="span6">
+<iframe width="570" height="280" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps?sll=39.90395040000005,32.81741050000004&amp;sspn=0.006222447019527742,0.01716723198968925&amp;t=m&amp;q=Me%C5%9Frutiyet+Cd,+Ankara,+T%C3%BCrkiye&amp;ie=UTF8&amp;hq=&amp;hnear=Me%C5%9Frutiyet+Cd,+Ankara%2F%C3%87ankaya,+T%C3%BCrkiye&amp;ll=39.923692,32.854958&amp;spn=0.036861,0.097847&amp;z=13&amp;iwloc=A&amp;output=embed"></iframe><br /><small><a href="https://www.google.com/maps?sll=39.90395040000005,32.81741050000004&amp;sspn=0.006222447019527742,0.01716723198968925&amp;t=m&amp;q=Me%C5%9Frutiyet+Cd,+Ankara,+T%C3%BCrkiye&amp;ie=UTF8&amp;hq=&amp;hnear=Me%C5%9Frutiyet+Cd,+Ankara%2F%C3%87ankaya,+T%C3%BCrkiye&amp;ll=39.923692,32.854958&amp;spn=0.036861,0.097847&amp;z=13&amp;iwloc=A&amp;source=embed" style="color:#0000FF;text-align:left">Daha Büyük Görüntüle</a></small>                  </div>
+                </div>
+
+                <div class="cform-response-output"></div>
+            </div>
+          </div>          
         </div>
         <!-- /.row -->
       </div>
